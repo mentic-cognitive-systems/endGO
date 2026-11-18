@@ -1,0 +1,6 @@
+name = "endgo-cloudflare-app"
+main = "src/index.ts"
+compatibility_date = "2026-11-10"
+
+[vars]
+GREETING = "Hello from Cloudflare"

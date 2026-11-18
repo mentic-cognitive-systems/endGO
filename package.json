@@ -1,0 +1,49 @@
+{
+  "name": "endgo",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Zero-dependency, IoC-driven Web Standard endpointframework for Cloudflare Workers, Fastly, Bun, Deno, and Node.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist", "README.md", "LICENSE"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./routers": {
+      "types": "./dist/routers/index.d.ts",
+      "import": "./dist/routers/index.js"
+    },
+    "./cloudC": {
+      "types": "./dist/cloudC.d.ts",
+      "import": "./dist/cloudC.js"
+    },
+    "./adapters/bun": {
+      "types": "./dist/adapters/bun.d.ts",
+      "import": "./dist/adapters/bun.js"
+    },
+    "./adapters/cloudflare": {
+      "types": "./dist/adapters/cloudflare.d.ts",
+      "import": "./dist/adapters/cloudflare.js"
+    },
+    "./adapters/landcloud": {
+      "types": "./dist/adapters/landcloud.d.ts",
+      "import": "./dist/adapters/landcloud.js"
+    },
+    "./adapters/node": {
+      "types": "./dist/adapters/node.d.ts",
+      "import": "./dist/adapters/node.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "dev:storage": "bun examples/portable-storage/local.ts",
+    "smoke:package": "node examples/package-consumer/verify.mjs",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
